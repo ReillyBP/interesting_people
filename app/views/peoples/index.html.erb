@@ -1,0 +1,17 @@
+<div id="app">
+<h1>{{people.length}}</h1>
+  {{ message }}
+  <div>
+    <ul>
+      <li v-for="person in people"> 
+      <div v-on:click="toggleBio(person)">{{person.name}}</div>
+       <div v-if="person.bioVisible">
+      {{person.bio}}
+      </div>
+      </li>
+    </ul>
+    <input v-model="newName">
+    <input v-model="newBio">
+    <button on:click="addPerson()">Add Person</button>
+  </div>
+</div>
